@@ -437,7 +437,7 @@ img {
   width: calc((100% - 48px) / 3);
 }
 .products-link:hover .products-overlay-text,
-.prodycts-link:focus .products_overlay-text {
+.products-link:focus .products-overlay-text {
   transform: translateY(0%);
 }
 
