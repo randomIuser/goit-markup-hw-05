@@ -436,12 +436,11 @@ img {
   box-sizing: border-box;
   width: calc((100% - 48px) / 3);
 }
-.products-item:hover .products-overlay {
+.products-link:hover .products-overlay-text,
+.prodycts-link:focus .products_overlay-text {
   transform: translateY(0%);
 }
-.products-item:focus .products-overlay {
-  transform: translateY(0%);
-}
+
 .products-link {
   display: block;
   transition: box-shadow var(--transition-time);
