@@ -614,7 +614,7 @@ img {
   padding: 0;
   justify-content: center;
   align-items: center;
-  transition: background-color var(--active-color),
+  transition: background-color var(--transition-time),
     border var(--transition-time);
   transition: fill var(--active-btn-text);
   cursor: pointer;
