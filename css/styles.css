@@ -615,8 +615,8 @@ img {
   padding: 0;
   justify-content: center;
   align-items: center;
-  transition: background-color var(--transition-time),
-    border var(--transition-time);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: fill var(--active-btn-text);
   cursor: pointer;
 }
