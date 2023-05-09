@@ -128,7 +128,7 @@ img {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: var(--primary-text-color);
+  color: var(--active-color);
   padding: 24px 0;
   transition: color var(--transition-time);
 }
@@ -141,12 +141,12 @@ img {
 .header-nav-link::after {
   display: block;
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   content: "";
   width: 100%;
   height: 4px;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 .header-nav-link.active::after {
   background-color: var(--active-color);
@@ -351,6 +351,7 @@ img {
 .customers-item {
   width: calc((100% - 120px) / 6);
   height: 88px;
+  transition: border-color var(--transition-time);
 }
 .customers-link {
   color: var(--customers-color);
@@ -398,7 +399,8 @@ img {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color var(--transition-time),
-    color var(--transition-time);
+    color var(--transition-time), border-color var(--transition-time),
+    box-shadow var(--transition-time);
 }
 .btn:hover {
   color: var(--active-btn-text);
@@ -457,14 +459,16 @@ img {
   height: 100%;
   width: 100%;
   transform: translateY(100%);
-  transition: transform 250ms;
+  transition: transform var(--transition-time);
 }
 .products-overlay-text {
   font-size: 16px;
-  line-height: 24px;
   letter-spacing: 0.02em;
   color: var(--footer-text-color);
   padding: 40px 32px;
+  position: absolute;
+  top: 0;
+  line-height: 1.5;
 }
 .products-item-descr {
   padding: 32px 16px;
@@ -487,6 +491,10 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--secondary-text-color);
+}
+.products-descr:hover,
+.products-descr:focus {
+  transform: translateY(0%);
 }
 /* FOOTER */
 .footer {
@@ -577,16 +585,16 @@ img {
 }
 .modal {
   width: 408px;
-  height: 576px;
+  min-height: 576px;
   background-color: var(--modal-background-color);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   position: absolute;
-  top: calc(50% - 330px);
-  left: calc(50% - 225px);
-  transform: translate(-50% -50%);
-  transition: opacity 250ms ease-in, transform 250ms ease-in;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% -50%) scale(1);
+  transition: transform var(--transition-time);
   transition-delay: 250ms;
 }
 .backdrop.is-hidden .modal {
@@ -606,7 +614,8 @@ img {
   padding: 0;
   justify-content: center;
   align-items: center;
-  transition: background-color var(--active-color);
+  transition: background-color var(--active-color),
+    border var(--transition-time);
   transition: fill var(--active-btn-text);
   cursor: pointer;
 }
@@ -615,4 +624,8 @@ img {
 .modal-close-btn:active {
   background-color: var(--active-color);
   fill: #ffffff;
+  border: none;
+}
+.modal-close-icon {
+  transition: fill var(--transition-time);
 }
